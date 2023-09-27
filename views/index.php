@@ -59,11 +59,9 @@
                             $usuarioArray = $usuarioResult["usuario"]; // Datos en formato de array
                             $usuarioJSON = $usuarioResult["usuarioJSON"]; // Datos en formato JSON
 
-                            // Para mostrar el JSON
                             // echo "Datos en formato JSON: " . $usuarioJSON;
 
                             // Aquí puedes utilizar los datos del usuario en formato de array
-
                             foreach ($usuarioArray as $usuario) {
 
                                 $id = $usuario["id"];
@@ -90,8 +88,6 @@
                         </tr>
                         <?php
                             }
-                        } else {
-                            // Manejo de caso en el que no se encontró el usuario
                         }
                         ?>
                     </tbody>
@@ -99,7 +95,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

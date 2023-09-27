@@ -20,8 +20,7 @@ class ConsultasModel
         $password,
         $correo
     ) {
-        $sql =
-            "INSERT INTO usuario (nombre, apellido, correo, usuario_so, password) VALUES (:nombre, :apellido, :correo, :usuarioSo, :password)";
+        $sql = "INSERT INTO usuario (nombre, apellido, correo, usuario_so, password) VALUES (:nombre, :apellido, :correo, :usuarioSo, :password)";
         $stmt = Conexion::getConnect()->prepare($sql);
 
         $stmt->bindParam(":nombre", $nombre, PDO::PARAM_STR);
@@ -136,8 +135,7 @@ class ConsultasModel
         $correo
     ) {
         try {
-            $sql =
-                "UPDATE usuario SET nombre = :nombre, apellido = :apellido, correo = :correo, usuario_so = :usuarioSo, password = :passw WHERE id = :idUser";
+            $sql = "UPDATE usuario SET nombre = :nombre, apellido = :apellido, correo = :correo, usuario_so = :usuarioSo, password = :passw WHERE id = :idUser";
             $stmt = Conexion::getConnect()->prepare($sql);
             $stmt->bindParam(":idUser", $idUser, PDO::PARAM_STR);
             $stmt->bindParam(":nombre", $nombre, PDO::PARAM_STR);
@@ -193,8 +191,7 @@ class ConsultasModel
     public static function mdlLoginUsuario($usr, $psw)
     {
         try {
-            $sql =
-                "SELECT * FROM usuario WHERE usuario_so = :usr AND password = :psw";
+            $sql = "SELECT * FROM usuario WHERE usuario_so = :usr AND password = :psw";
             $stmt = Conexion::getConnect()->prepare($sql);
             $stmt->bindParam(":usr", $usr, PDO::PARAM_STR, 25);
             $stmt->bindParam(":psw", $psw, PDO::PARAM_STR, 255); // Asegura que la longitud sea suficiente

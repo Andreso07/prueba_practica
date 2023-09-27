@@ -26,12 +26,11 @@ class ControladorLogin
 
             if ($verificarLogin !== null) {
                 // Inicio de sesión exitoso
-                // session_start();
                 $_SESSION["usuario_so"] = $verificarLogin->usuario;
                 $_SESSION["password"] = $verificarLogin->password;
                 header("location:index.php"); // Redirige a la página principal
             } else {
-                echo '<br><div class="alert alert-danger">Error, vuelve a intentarlo</div>';
+                echo '<br><div class="alert alert-danger">Usuario o Contraseña incorrectos</div>';
                 session_destroy();
             }
         }
